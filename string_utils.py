@@ -1,4 +1,3 @@
-
 def split_before_uppercases(formula):
     if not formula:
         return []
@@ -14,29 +13,28 @@ def split_before_uppercases(formula):
 
 def split_at_digit(formula):
    digit_location = 0
-    while digit_location < len(formula) and not formula[digit_location].isdigit():
-        digit_location += 1
-    if digit_location == len(formula):
-        return formula, 1
-    start_digit = digit_location
-    while digit_location < len(formula) and formula[digit_location].isdigit():
-        digit_location += 1
-    prefix = formula[:start_digit]
-    number = int(formula[start_digit:digit_location])
-    return prefix, number
+   while digit_location < len(formula) and not formula[digit_location].isdigit():
+      digit_location += 1
+   if digit_location == len(formula):
+      return formula, 1
+   start_digit = digit_location # Corrected placement and indentation
+   while digit_location < len(formula) and formula[digit_location].isdigit():
+      digit_location += 1
+   prefix = formula[:start_digit]
+   number = int(formula[start_digit:digit_location])
+   return prefix, number
 
 
 def count_atoms_in_molecule(molecular_formula):
    atom_counts = {}
    split_formula = split_before_uppercases(molecular_formula)
-    for formula_part in split_formula:
+   for formula_part in split_formula:
         atom, count = split_at_digit(formula_part)
         if atom in atom_counts:
             atom_counts[atom] += count
         else:
             atom_counts[atom] = count
-    return atom_counts
-
+   return atom_counts
 
 def parse_chemical_reaction(reaction_equation):
     """Takes a reaction equation (string) and returns reactants and products as lists.  
