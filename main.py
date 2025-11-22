@@ -1,5 +1,7 @@
+import importlib, string_utils, equation_utils
+importlib.reload(string_utils)
+importlib.reload(equation_utils)
 # Add the import statements for functions from string_utils.py and equation_utils.py here
-
 
 def balance_reaction(reaction): #"Fe2O3 + H2 -> Fe + H2O"
 
