@@ -1,5 +1,10 @@
-from string_utils import (parse_chemical_reaction,  count_atoms_in_reaction,  count_atoms_in_molecule, split_before_uppercases, split_at_digit)
-
+from string_utils import (
+    parse_chemical_reaction,
+    count_atoms_in_reaction,
+    count_atoms_in_molecule,
+    split_before_uppercases,
+    split_at_digit
+)
 from equation_utils import build_equations, my_solve
 
 def balance_reaction(reaction): #"Fe2O3 + H2 -> Fe + H2O"
